@@ -45,8 +45,8 @@ function s.descon(e,tp,eg,ep,ev,re,r,rp)
 	if c:IsLocation(LOCATION_DECK) then
 		return false
 	end
-	--- Hack for if destroyed by rule (get control by no slot, lost equip target etc)
-	--- remove this hack once the reason effect does not change issue is addressed in core
+	-- Temporary workaround for rule-based destruction (e.g., loss of control due to no slot, equip target removal, etc.)
+	-- Remove this hack once the core correctly handles clearing `reason_effect`
 	if (r&REASON_RULE~=0) then
 		return true
 	end
